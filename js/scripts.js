@@ -1,27 +1,26 @@
+// Backend
+// var arabicsArray = [1,5,10,50,100,500,1000];
+// var romansArray = [I,V,X,L,C,D,M];
+  // var input = "12";
+  //  var convertRoman = function(input)
+
+  // var transformNumber = function(input) {
+  //
+  // }
+
+// var m = (inputNum  - (inputNum%))/
+
+// Front end
+
 $(document).ready(function() {
   $("form#romanize").submit(function(event) {
     event.preventDefault();
-    var input = $("input#formInput").val();
+    var input = parseInt($("input#formInput").val());
 
-    // sorting input
-    if (input = 0) {
-      $("#result").text("ZERO");
+    if (input > 3999 || input < 1) {
+      alert("Please enter a number that can convert to Roman numerals.");
+    } else {
+      alert("Success!");
     }
-    else if (input > 3999) {
-      $("#result").text("error, too large to make Roman");
-    }
-    else if (input < 4000) {
-      $("#result").text("this works");
-    }
-
-    // $("#result").text("this works");
   });
 });
-
-
-
-
-// // processing input
-// for (i=0, i<=3, i++) {
-//
-// }
