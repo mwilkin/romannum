@@ -4,27 +4,24 @@ $(document).ready(function() {
   $("form#romanize").submit(function(event) {
     event.preventDefault();
     var workingNumber = parseInt($("input#formInput").val());
-    $("#result").text("test");
+    var resultString = romanize(workingNumber);
+    $(".result").text(resultString);
   });
 });
 
 
 // Backend
-// var workingNumber = input;
-var resultString = "";
-// var workingNumber = 0;
+romanize = function(workingNumber) {
+  var resultString = "";
+  // if (workingNumber > 3999 || workingNumber < 1) {
+  //   alert("Please enter a number that can convert to Roman numerals.");
+  // } else {
 
-// if (workingNumber > 3999 || workingNumber < 1) {
-//   alert("Please enter a number that can convert to Roman numerals.");
-// } else {
-
-var limit = function(workingNumber) {
-  while (workingNumber > 1) {
-    var romanize = function(workingNumber) {
-      if (workingNumber > 1000) {
+  while (workingNumber > 0) {
+    if (workingNumber > 1000) {
         workingNumber =- 1000;
         resultString = (resultString + "M");
-        console.log("M level");
+        // console.log("M level");
       }
       else if (workingNumber > 900) {
         workingNumber =- 900;
@@ -41,7 +38,7 @@ var limit = function(workingNumber) {
       else if (workingNumber > 100) {
         workingNumber =- 100;
         resultString = (resultString + "C");
-        console.log("C level");
+        // console.log("C level");
       }
       else if (workingNumber > 90) {
         workingNumber =- 90;
@@ -75,5 +72,5 @@ var limit = function(workingNumber) {
         workingNumber =- 1;
         resultString = (resultString + "I");
       };
+    return resultString;
   }
-}
